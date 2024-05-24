@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<style>
+    /* CSS para centralizar a coluna "Ações" */
+    .acoes-column {
+        text-align: center;
+    }
+</style>
+
+<div>
+    <h3 id="principal">Administração</h3>
+    <ul>
+        <li><a href="adm">Adicionar</a></li>
+        <li><a href="contatos">Contatos</a></li>
+        <li><a href="agendamento">Agendamento</a></li>
+        <li><a href="servicos">Serviços</a></li>
+        <li><a href="ocorrencias">Ocorrências</a></li>
+        <li><a href="telefones">Telefones</a></li>
+        <li><a href="informacoes">Informações</a></li>
+    </ul>
+    <br>
+</div>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Ramal</th>
+            <th>Condomínio</th>
+            <th>Telefone</th>
+            <th>Cidade</th>
+            <th>Unidade</th>
+            <th>Administrativo</th>
+            <th>Bairro</th>
+            <th class="acoes-column">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for condominio in condominios %}
+        <tr>
+            <td>{{ condominio.ramal_condominio }}</td>
+            <td>{{ condominio.nome_condominio }}</td>
+            <td>{{ condominio.telefone }}</td>
+            <td>{{ condominio.cidade }}</td>
+            <td>{{ condominio.unidade.nome_unidade }}</td>
+            <td>{{ condominio.financeiro_responsavel }}</td>
+            <td>{{ condominio.bairro }}</td>
+            <td class="acoes-column">
+                <button onclick="edit()">✎</button>
+                <button onclick="add()">+</button>
+                <button onclick="remove()">-</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<script>
+    function edit() {
+        // Implemente a lógica para editar o condominio
+        console.log('Editar condominio');
+    }
+
+    function add() {
+        // Implemente a lógica para adicionar o condominio
+        console.log('Adicionar condominio');
+    }
+
+    function remove() {
+        // Implemente a lógica para remover o condominio
+        console.log('Remover condominio');
+    }
+</script>
+{% endblock %}

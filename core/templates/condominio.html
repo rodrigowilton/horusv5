@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<style>
+    .form-container {
+        margin-left: 10px;
+    }
+    .form-container fieldset {
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+    .form-container legend {
+        font-weight: bold;
+    }
+    #legend id="titulocad{
+        font: 18px;
+    }
+
+    .form-container label {
+        display: inline-block;
+        width: 200px; /* Adjust the width as needed */
+        vertical-align: top;
+    }
+    .form-container input, .form-container select, .form-container textarea {
+        margin-bottom: 10px;
+        padding: 5px;
+        width: 300px; /* Adjust the width as needed */
+    }
+    .form-container textarea {
+        height: 100px; /* Adjust the height as needed */
+    }
+    .form-container button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    .form-container button:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<div class="form-container">
+    <form action="/submit_form" method="post">
+        {% csrf_token %}
+        <fieldset>
+            <legend id="titulocad">Cadastro de Condomínio</legend>
+            <label for="internet">Internet:</label>
+            <select id="internet" name="internet">
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
+
+            <label for="unidade">Unidade:</label>
+            <select id="unidade" name="unidade">
+                <option value="unidade1">Unidade 1</option>
+                <option value="unidade2">Unidade 2</option>
+            </select>
+            <br>
+
+            <label for="entregadores_norma">Entregadores Norma:</label>
+            <select id="entregadores_norma" name="entregadores_norma">
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
+
+            <label for="prestadores_norma">Prestadores Norma:</label>
+            <select id="prestadores_norma" name="prestadores_norma">
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
+            <br>
+
+            <label for="reservas_norma">Reservas Norma:</label>
+            <select id="reservas_norma" name="reservas_norma">
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
+
+            <label for="mudancas_norma">Mudanças Norma:</label>
+            <select id="mudancas_norma" name="mudancas_norma">
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
+
+            <label for="responsavel_tattica">Responsável Tattica:</label>
+            <select id="responsavel_tattica" name="responsavel_tattica">
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
+            <br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Dados do Condomínio</legend>
+            <label for="norma_observacao">Norma Observação:</label>
+            <textarea id="norma_observacao" name="norma_observacao"></textarea>
+            <br>
+
+            <label for="nome_condominio">Nome do Condomínio:</label>
+            <input type="text" id="nome_condominio" name="nome_condominio">
+
+            <label for="data_condominio">Data do Condomínio:</label>
+            <input type="date" id="data_condominio" name="data_condominio">
+
+            <label for="dias_implantacao">Dias de Implantação:</label>
+            <input type="number" id="dias_implantacao" name="dias_implantacao">
+
+            <br>
+
+            <label for="ramal_condominio">Ramal do Condomínio:</label>
+            <input type="text" id="ramal_condominio" name="ramal_condominio">
+
+            <label for="ramal_interno">Ramal Interno:</label>
+            <input type="text" id="ramal_interno" name="ramal_interno">
+
+            <label for="cnpj">CNPJ:</label>
+            <input type="text" id="cnpj" name="cnpj">
+            <br>
+
+            <label for="logradouro">Logradouro:</label>
+            <input type="text" id="logradouro" name="logradouro">
+
+            <label for="numero">Número:</label>
+            <input type="text" id="numero" name="numero">
+
+            <label for="complemento">Complemento:</label>
+            <input type="text" id="complemento" name="complemento">
+
+            <label for="bairro">Bairro:</label>
+            <input type="text" id="bairro" name="bairro">
+
+            <br>
+
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade">
+
+            <label for="uf">UF:</label>
+            <input type="text" id="uf" name="uf">
+
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep">
+
+            <label for="website">Website:</label>
+            <input type="url" id="website" name="website">
+            <br>
+
+            <label for="website_agendamento">Website de Agendamento:</label>
+            <input type="url" id="website_agendamento" name="website_agendamento">
+            <br>
+
+            <label for="financeiro_responsavel">Responsável Financeiro:</label>
+            <input type="text" id="financeiro_responsavel" name="financeiro_responsavel">
+            <br>
+
+            <label for="financeiro_email">Email do Financeiro:</label>
+            <input type="email" id="financeiro_email" name="financeiro_email">
+            <br>
+        </fieldset>
+
+        <button type="submit">Salvar</button>
+    </form>
+</div>
+{% endblock %}

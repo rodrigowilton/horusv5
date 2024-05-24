@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <title>
+        {% block title %}
+            HorusV5 - Tattica Tecnologia
+        {% endblock %}
+    </title>
+</head>
+<body>
+    <div class="container">
+        <img src="{% static 'img/icon.png' %}" alt="Icon">
+        <h1>HorusV5 - Tattica Tecnologia</h1>
+    </div>
+    {% block body %}{% endblock %}
+</body>
+</html>
