@@ -15,7 +15,6 @@ table {
 h1{
     padding: 10px;
     font-size:50px;
-    background-image:radial-gradient(blue, #1873fa, white, blue);
     text-shadow: 3px 3px #90c1f3;
     text-align:center;
     border-radius: 40px;
